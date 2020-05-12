@@ -1,0 +1,162 @@
+<html>
+
+<head>
+
+<title> Quotes by Ortap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poiret+One&display=swap" rel="stylesheet">
+  
+  <script type="text/javascript" src="html2canvas.js"></script>
+  
+</head>
+
+<div class="master">
+
+<style>
+.master {  
+    display: grid;  
+    grid-gap: 5px;  
+    grid-template-columns: repeat(auto-fit, 400px);
+    
+	 
+}
+</style>
+
+<div class="container" id='container'  >
+  
+  <style>
+  
+  .master {  
+    display: grid;  
+    grid-gap: 5px;  
+    grid-template-columns: repeat(auto-fit, 400px);
+     
+}
+  .container {
+  color: white;
+  
+  width: 400px;
+  height: 400px;
+  
+  background-color: #8BC6EC;
+  }
+    .layer1
+    {
+      position:inherit;
+      top: 0px;
+      left: 0px;
+      z-index: 0;
+    }
+    .photo
+    {
+      
+      position:absolute;
+      top: 85px;
+      left: 50px;
+      z-index: 1;
+	  font-family: 'Anton', sans-serif;
+      font-size: 15px;
+	 color: #666;
+    }
+     .layer2
+    {
+      position:absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 2;
+    }
+    .logo
+    {
+      position:absolute;
+      top: 330px;
+      left: 100px;
+      z-index: 3;
+    }
+    .name
+    {
+      position:absolute;
+      top: 300px;
+      left: 175px;
+      z-index: 3;
+      font-family: 'Anton', sans-serif;
+      font-size: 35px;
+    }
+     .job
+    {
+      position:absolute;
+      top: 290px;
+      left: 178px;
+      z-index: 4;
+     font-family: 'Poiret One', cursive;
+      font-size: 18px;
+    }
+    .slogan
+    {
+      position:absolute;
+	  width:325;
+	  text-align:justify;
+      top: 120px;
+      left: 50px;
+      z-index: 4;
+     font-family: 'Poiret One', cursive;
+      color: black;
+      font-size: 25px;
+    }
+    .hash
+    {
+      position:absolute;
+      top: 340px;
+      left: 250px;
+      z-index: 4;
+     font-family: 'Poiret One', cursive;
+      color: #999999;
+      font-size: 15px;
+    }
+  </style>
+
+  
+  <div class="layer1"><img src="frame.jpg" width="400" ></div>
+  <div class="photo">Quote of the day </div>
+  <script type="text/javascript" src="https://theysaidso.com/gadgets/v3/theysaidso.js"></script>
+<div class="slogan">
+  <big> <big><script>TheySaidSo.render({ qod_category: 'inspire'});</script></big></big>
+</div>
+  
+  <div class="hash"><b>@barunpatro</b></div>
+ 
+  <div class="logo"><img src="dotand-iso.png" width="50" ></div>
+</div>
+
+</div>
+
+<br/>
+<br/>
+
+<input type='button' id='but_screenshot' value='Take screenshot' onclick='screenshot();'> <br/>
+
+ <!-- Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<!-- Script -->
+  <script type='text/javascript'>
+  function screenshot(){
+   html2canvas(document.getElementById('container')).then(function(canvas) {
+    document.body.appendChild(canvas);
+	 // Get base64URL
+         var base64URL = canvas.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');
+
+         // AJAX request
+         $.ajax({
+            url: 'ajaxfile.php',
+            type: 'post',
+            data: {image: base64URL},
+            success: function(data){
+               console.log('Upload successfully');
+	 }
+         });
+       });  
+     }
+  </script>
+
+ </body>
+</html>
